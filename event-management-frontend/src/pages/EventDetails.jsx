@@ -94,7 +94,7 @@ const EventDetails = () => {
           </div>
         )}
 
-        {/* ✅ Editing Form */}
+        {/* Editing Form */}
         {isEditing && (
           <div className="mt-6 p-4 bg-gray-100 rounded-lg">
             <h3 className="text-xl sm:text-2xl font-semibold mb-4">Edit Event</h3>

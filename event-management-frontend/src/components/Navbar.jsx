@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import { FaBars, FaTimes } from "react-icons/fa"; // Icons for mobile menu
+import { FaBars, FaTimes } from "react-icons/fa"; 
 import AuthContext from "../context/AuthContext";
 
 const Navbar = () => {
