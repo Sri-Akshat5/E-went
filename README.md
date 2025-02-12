@@ -1,4 +1,4 @@
-# 🎟️ Event Management App
+# 🎟️ Event Management Platform
 
 A **full-stack** event management application that allows users to create and manage events. Built with **React, Node.js, Express, and MongoDB**, this app supports **user authentication, real-time event updates, and guest login**.
 
