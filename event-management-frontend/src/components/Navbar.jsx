@@ -10,7 +10,7 @@ const Navbar = () => {
 
   const handleLogout = () => {
     logout();
-    navigate("/"); // Redirect to Dashboard after logout
+    navigate("/"); 
   };
 
   return (
