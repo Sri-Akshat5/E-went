@@ -73,7 +73,7 @@ const EventDetails = () => {
   if (error) return <p className="text-center mt-6 text-red-500">{error}</p>;
 
   return (
-    <div className="pt-24 p-4 sm:p-6 min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex flex-col items-center">
+    <div className="pt-36 p-4 sm:p-6 min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex flex-col items-center">
       <div className="bg-white shadow-xl p-6 sm:p-8 rounded-xl w-full max-w-lg sm:max-w-2xl">
         <h2 className="text-3xl sm:text-4xl font-extrabold text-center text-gray-800 mb-4">{event.name}</h2>
         <p className="text-gray-600 text-base sm:text-lg text-center">{event.description}</p>
