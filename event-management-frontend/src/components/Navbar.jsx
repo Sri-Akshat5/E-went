@@ -1,11 +1,17 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa"; 
 import AuthContext from "../context/AuthContext";
 
 const Navbar = () => {
   const { token, isGuest, logout } = useContext(AuthContext);
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate("/"); // Redirect to Dashboard after logout
+  };
 
   return (
     <nav className="fixed top-4 left-0 right-0 mx-auto bg-gradient-to-r from-blue-500 to-indigo-600 text-white shadow-lg rounded-full px-6 py-3 w-[95%] md:w-[90%] lg:w-[80%] flex justify-between items-center z-50">
@@ -30,14 +36,14 @@ const Navbar = () => {
 
         {token ? (
           isGuest ? (
-            <button onClick={logout} className="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-full">
+            <button onClick={handleLogout} className="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-full">
               👤 Guest Logout
             </button>
           ) : (
             <>
               <Link to="/create-event" className="hover:text-yellow-300">Create Event</Link>
               <Link to="/admin" className="hover:text-yellow-300">My Events</Link>
-              <button onClick={logout} className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-full">
+              <button onClick={handleLogout} className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-full">
                 Logout
               </button>
             </>
@@ -57,14 +63,14 @@ const Navbar = () => {
 
           {token ? (
             isGuest ? (
-              <button onClick={logout} className="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-full">
+              <button onClick={handleLogout} className="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-full">
                 👤 Guest Logout
               </button>
             ) : (
               <>
                 <Link to="/create-event" className="hover:text-blue-600" onClick={() => setMenuOpen(false)}>Create Event</Link>
                 <Link to="/admin" className="hover:text-blue-600" onClick={() => setMenuOpen(false)}>My Events</Link>
-                <button onClick={logout} className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-full">
+                <button onClick={handleLogout} className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-full">
                   Logout
                 </button>
               </>
