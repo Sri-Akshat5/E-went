@@ -79,7 +79,6 @@ npm run dev
 - Users can view events & attendee count updates automatically
 
 
-
 ## 🔗 Links 
 - Frontend Deployment: https://e-went.vercel.app/
 - Backend Deployment: https://e-went.onrender.com
